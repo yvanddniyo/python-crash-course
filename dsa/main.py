@@ -66,3 +66,16 @@ def factorial(n):
 
 
 print("factorial", factorial(5))
+
+
+def two_sum(nums, target):
+    sets = {}
+    for i, num in enumerate(nums):
+        sub = target - num
+        if sub in sets:
+            return [sets[sub], i]
+        sets[num] = i
+
+
+res = two_sum([3, 3], 6)
+print("res", res)
