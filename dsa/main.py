@@ -49,13 +49,13 @@ print("SelectingSort", selectionSort([5, 3, 6, 2, 10]))
 
 
 def count_down(n):
-    print("i", n)
+    # print("i", n)
     if n <= 0:
         return
     count_down(n - 1)
 
 
-count_down(9)
+print("-->", count_down(9))
 
 
 def factorial(n):
@@ -78,4 +78,42 @@ def two_sum(nums, target):
 
 
 res = two_sum([3, 3], 6)
+print("res", res)
+
+
+def summation(arr):
+    result = 0
+    for num in arr:
+        result += num
+    return result
+
+
+print("Summation", summation([1, 2, 3, 4]))
+
+
+def countList(n):
+    if n < 1:
+        return "Done"
+    else:
+        return countList(n - 1)
+
+
+res = countList(5)
+print("countList ->", res)
+
+# QUICKSORT
+
+
+def quick_sort(arr):
+    if len(arr) < 2:
+        return arr
+    else:
+        pivot = arr[0]
+        less = [i for i in arr[1:] if i <= pivot]
+        greater = [i for i in arr[1:] if i > pivot]
+
+        return quick_sort(less) + [pivot] + quick_sort(greater)
+
+
+res = quick_sort([10, 5, 2, 3])
 print("res", res)
