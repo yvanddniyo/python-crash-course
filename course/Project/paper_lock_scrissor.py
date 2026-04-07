@@ -34,3 +34,17 @@ def check_win(player, computer):
 choices = get_choices()
 result = check_win(choices["player"], choices["computer"])
 print("result", result)
+
+
+def two_sum(nums, target):
+    prevHash = {}
+    for i, num in enumerate(nums):
+        diff = target - num
+        if diff in prevHash:
+            return [prevHash[diff], i]
+        prevHash[num] = i
+    return
+
+
+result = two_sum([2, 7, 0, 6], 8)
+print("result", result)
